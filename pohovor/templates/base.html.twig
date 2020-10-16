@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Knižnica | pohovor{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7782f26b25.js" crossorigin="anonymous"></script>
+
+        <style type="text/css">
+           body{
+               font-family: 'Cabin', sans-serif;
+            }
+            nav{
+                line-height: 7vh;
+            }
+            .topBar{
+                height: 7vh;
+                background-color: #353535;
+            }
+            a{
+                color: #FFF;
+                text-decoration: none;
+                opacity: 1;
+                line-height: 7vh;
+            }
+            a:hover{
+                opacity: 0.8;
+                color: #FFF;
+                text-decoration: none;
+            }
+            a.navbar-brand{
+                font-weight: bold;
+            }
+        </style>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="container-fluid topBar">
+        <div class="container">
+            <nav>
+                <a href="{{ path('user.index') }}" class="navbar-brand"><i class="fas fa-book"></i> Knižnica</a>
+                <a href="{{ path('book.index') }}" class="float-right"><i class="fas fa-book-open"></i> Zoznam kníh</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
+
+        {% block javascripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </body>
+</html>
